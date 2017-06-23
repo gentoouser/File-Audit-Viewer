@@ -1,0 +1,55 @@
+SQL Setup
+	*MySQL Database setup:
+		CREATE DATABASE FilesServer;
+	    Use FilesServer;
+
+		CREATE TABLE FileAudit (
+					ID	INT(100) UNSIGNED AUTO_INCREMENT PRIMARY KEY,	
+					FolderPath				LONGTEXT,
+					AccountSAMAccountName	LONGTEXT,
+					GroupSAMAccountName		LONGTEXT,
+					ManagedBy				LONGTEXT,
+					Inheritance				LONGTEXT,
+					IsInherited				LONGTEXT,
+					Rights					LONGTEXT,
+					Owner					LONGTEXT,
+					Computer				LONGTEXT,
+					RunDate					bigint
+		)
+	*MS SQL Database setup:
+		CREATE DATABASE FilesServer;
+	    Use FilesServer;
+
+		CREATE TABLE FileAudit (
+					ID	INT(100) UNSIGNED AUTO_INCREMENT PRIMARY KEY,	
+					FolderPath				nvarchar(MAX),
+					AccountSAMAccountName	nvarchar(MAX),
+					GroupSAMAccountName		nvarchar(MAX),
+					ManagedBy				nvarchar(MAX),
+					Inheritance				nvarchar(MAX),
+					IsInherited				nvarchar(MAX),
+					Rights					nvarchar(MAX),
+					Owner					nvarchar(MAX),
+					Computer				nvarchar(MAX),
+					RunDate					bigint
+		)
+
+Version 1.1.0
+	*Added support for MySql
+	*Added Computer selection
+	*Added DropDown on Click
+	*.Net 4.5	
+Version 1.0.0
+	*Reads from MSSQL with table layout of:
+		Table Name: FileAudit
+			Column Name				Data Type
+			ID						int
+			FolderPath				nvarchar(MAX)
+			AccountSAMAccountName	nvarchar(MAX)
+			GroupSAMAccountName		nvarchar(MAX)
+			ManagedBy				nvarchar(MAX)
+			Inheritance				nvarchar(MAX)
+			Rights					nvarchar(MAX)
+			Owner					nvarchar(MAX)
+			RunDate					bigint
+			IsInherited		varchar(50)
